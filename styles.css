@@ -7,6 +7,19 @@ body {
     background-color: #f9f9f9;
 }
 
+/* 로고 스타일 */
+.logo {
+    display: flex;
+    align-items: center; /* 이미지와 텍스트 수직 정렬 */
+    gap: 10px; /* 이미지와 텍스트 간격 조정 */
+}
+
+/* 로고 이미지 스타일 */
+.logo-image {
+    width: 40px; /* 로고 이미지 너비 */
+    height: auto; /* 높이는 비율에 맞게 자동 조정 */
+}
+
 /* 헤더 스타일 */
 .header {
     background: #333;
@@ -220,11 +233,18 @@ body {
     color: #f7941d;
 }
 
-/* 요금표 스타일 */
+/* 요금표 및 이벤트 섹션 스타일 */
 .pricing-section, .event-section {
     padding: 2rem 0;
     background: #fafafa;
     text-align: center;
+    width: 100%; /* 가로로 꽉 차게 설정 */
+}
+
+/* 내부 컨테이너 스타일 */
+.pricing-section .container, .event-section .container {
+    max-width: 66%; /* 2/3 크기로 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
 }
 
 .pricing-section h2, .event-section h2 {
@@ -580,7 +600,7 @@ body {
     }
 
     .header .logo {
-        font-size: 1.1rem; /* 모바일에서 로고 폰트 크기 조정 */
+        font-size: 1.0rem; /* 모바일에서 로고 폰트 크기 조정 */
     }
 
     .header .nav {
@@ -687,5 +707,18 @@ body {
     .floating-button .button:active span {
         opacity: 1; /* 터치 시 텍스트가 보이도록 설정 */
         margin-left: 35px; /* 아이콘 옆의 텍스트 간격 설정 */
+    }
+
+    /* 로고 스타일 */
+    .logo {
+     display: flex;
+     align-items: center; /* 이미지와 텍스트 수직 정렬 */
+     gap: 5px; /* 이미지와 텍스트 간격 조정 */
+    }
+
+    /* 로고 이미지 스타일 */
+    .logo-image {
+      width: 20px; /* 로고 이미지 너비 */
+       height: auto; /* 높이는 비율에 맞게 자동 조정 */
     }
 }
