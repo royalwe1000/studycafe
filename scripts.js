@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const pricingTable = document.querySelector('.pricing-section .pricing-table'); // 요금표 섹션
     const pricingTypeSelect = document.getElementById('pricing-type'); // 필터 드롭다운
 
+    // 팝업 요소 선택
+    const eventPopup = document.getElementById('event-popup');
+    const closePopupBtn = document.querySelector('.close-popup');
+
     // 필수 요소들이 존재하는지 확인
-    if (!track || !modal || !modalImg || !captionText || !closeModalBtn || !prevBtn || !nextBtn || !paginationDotsContainer || !pricingTable || !pricingTypeSelect) {
+    if (!track || !modal || !modalImg || !captionText || !closeModalBtn || !prevBtn || !nextBtn || !paginationDotsContainer || !pricingTable || !pricingTypeSelect || !eventPopup || !closePopupBtn) {
         console.error("필수 요소 중 일부를 찾을 수 없습니다. 스크립트를 종료합니다.");
         return; // 필수 요소가 없으면 코드 실행 중단
     }
@@ -176,4 +180,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 페이지가 로드될 때 기본 필터 적용
     pricingTypeSelect.dispatchEvent(new Event('change'));
+
+    // 팝업을 보여주는 함수
+    function showPopup() {
+        eventPopup.style.display = 'block';
+    }
+
+    // 팝업을 닫는 함수
+    function closePopup() {
+        eventPopup.style.display = 'none';
+    }
+
+    // 페이지 로드 후 3초 뒤 팝업 표시
+    setTimeout(showPopup, 3000);
+
+    // 닫기 버튼 클릭 시 팝업 닫기
+    closePopupBtn.addEventListener('click', closePopup);
+
+    // 팝업 외부 클릭 시 닫기
+    window.addEventListener('click', (event) => {
+        if (event.target === eventPopup) {
+            closePopup();
+        }
+    });
 });

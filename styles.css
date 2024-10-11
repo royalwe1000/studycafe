@@ -512,6 +512,50 @@ body {
     border: 2px solid #4CAF50; /* 통일된 테두리 색상 */
 }
 
+/* 팝업창 스타일 */
+.popup {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    padding: 20px;
+    text-align: center;
+}
+
+.popup-content {
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f7941d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.popup-button:hover {
+    background-color: #e67300;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .header {
@@ -525,6 +569,10 @@ body {
         max-width: 90%; /* 헤더의 최대 너비를 화면의 90%로 설정 */
         margin: 0 auto; /* 가운데 정렬 */
         padding: 0rem 0rem; /* 헤더 패딩을 줄여서 높이 감소 */
+    }
+
+    .header .logo {
+        font-size: 1.1rem; /* 모바일에서 로고 폰트 크기 조정 */
     }
 
     .header .nav {
