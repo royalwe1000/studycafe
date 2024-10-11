@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독립석 맛집 스터디카페</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">로열위 스터디 카페</div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#pricing">요금표</a></li>
+                    <li><a href="#location">오시는 길</a></li>
+                    <li><a href="#info">사업자 정보</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+
+    <!-- 메인 배너 -->
+    <section class="main-banner">
+        <div class="banner-content">
+            <h1>독립석 맛집, 스터디카페</h1>
+            <p>공부와 업무에 최적화된 공간에서 집중하세요.</p>
+            <a href="#pricing" class="cta-button">지금 알아보기</a>
+        </div>
+    </section>    
+
+    <!-- 이미지 슬라이더 -->
+    <section class="image-slider">
+        <div class="slider-container">
+            <div class="slider-track">
+                <img src="img/1.jpg" alt="스터디 카페 이미지 1">
+                <img src="img/2.jpg" alt="스터디 카페 이미지 2">
+                <img src="img/3.jpg" alt="스터디 카페 이미지 3">
+                <img src="img/4.jpg" alt="스터디 카페 이미지 4">
+                <img src="img/4-2.jpg" alt="스터디 카페 이미지 5">
+                <img src="img/4-3.jpg" alt="스터디 카페 이미지 6">
+                <img src="img/5.jpg" alt="스터디 카페 이미지 7">
+                <img src="img/5-2.jpg" alt="스터디 카페 이미지 8">
+                <img src="img/6.jpg" alt="스터디 카페 이미지 9">
+                <img src="img/7.jpg" alt="스터디 카페 이미지 10">
+                <img src="img/8.jpg" alt="스터디 카페 이미지 11">
+                <img src="img/8-2.jpg" alt="스터디 카페 이미지 12">
+                <img src="img/9.jpg" alt="스터디 카페 이미지 13">
+                <img src="img/10.jpg" alt="스터디 카페 이미지 14">
+            </div>
+            <button class="prev-btn">&lt;</button>
+            <button class="next-btn">&gt;</button>
+            <!-- 페이지네이션 도트 -->
+            <div class="pagination-dots"></div>
+        </div>
+    </section>
+
+    <!-- 모달 창 -->
+    <div class="modal">
+        <div class="modal-inner">
+            <span class="close-btn">&times;</span>
+            <img class="modal-content" id="modal-img">
+            <div id="caption"></div>
+        </div>
+    </div>
+
+    <!-- 요금표 섹션 -->
+    <section id="pricing" class="pricing-section">
+        <h2>요금표</h2>
+        <p>스터디카페 요금 안내</p>
+        <select id="pricing-type" class="pricing-select">
+            <option value="all">모든 요금</option>
+            <option value="time">시간권</option>
+            <option value="fixed">정액권</option>
+            <option value="general">일반석 기간권</option>
+            <option value="independent">독립석 기간권</option>
+            <option value="reserved">독립석 고정석</option>
+            <option value="locker">사물함</option>
+        </select>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>종류</th>
+                    <th>기간/시간</th>
+                    <th>요금</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-type="time">
+                    <td>시간권 (1회)</td>
+                    <td>2시간</td>
+                    <td>3,000원</td>
+                </tr>
+                <tr data-type="time">
+                    <td>시간권 (1회)</td>
+                    <td>3시간</td>
+                    <td>5,000원</td>
+                </tr>
+                <tr data-type="time">
+                    <td>시간권 (1회)</td>
+                    <td>6시간</td>
+                    <td>6,000원</td>
+                </tr>
+                <tr data-type="time">
+                    <td>시간권 (1회)</td>
+                    <td>9시간</td>
+                    <td>8,000원</td>
+                </tr>
+                <tr data-type="time">
+                    <td>시간권 (1회)</td>
+                    <td>12시간</td>
+                    <td>10,000원</td>
+                </tr>
+                <tr data-type="fixed">
+                    <td>정액권</td>
+                    <td>50시간</td>
+                    <td>60,000원</td>
+                </tr>
+                <tr data-type="fixed">
+                    <td>정액권</td>
+                    <td>100시간</td>
+                    <td>110,000원</td>
+                </tr>
+                <tr data-type="fixed">
+                    <td>정액권</td>
+                    <td>200시간</td>
+                    <td>200,000원</td>
+                </tr>
+                <tr data-type="general">
+                    <td>일반석 기간권</td>
+                    <td>1주</td>
+                    <td>40,000원</td>
+                </tr>
+                <tr data-type="general">
+                    <td>일반석 기간권</td>
+                    <td>2주</td>
+                    <td>70,000원</td>
+                </tr>
+                <tr data-type="general">
+                    <td>일반석 기간권</td>
+                    <td>4주</td>
+                    <td>100,000원</td>
+                </tr>
+                <tr data-type="independent">
+                    <td>독립석 기간권</td>
+                    <td>1주</td>
+                    <td>40,000원</td>
+                </tr>
+                <tr data-type="independent">
+                    <td>독립석 기간권</td>
+                    <td>2주</td>
+                    <td>70,000원</td>
+                </tr>
+                <tr data-type="independent">
+                    <td>독립석 기간권</td>
+                    <td>4주</td>
+                    <td>140,000원</td>
+                </tr>
+                <tr data-type="reserved">
+                    <td>독립석 고정석</td>
+                    <td>1주</td>
+                    <td>50,000원</td>
+                </tr>
+                <tr data-type="reserved">
+                    <td>독립석 고정석</td>
+                    <td>2주</td>
+                    <td>90,000원</td>
+                </tr>
+                <tr data-type="reserved">
+                    <td>독립석 고정석</td>
+                    <td>4주</td>
+                    <td>150,000원</td>
+                </tr>
+                <tr data-type="reserved">
+                    <td>독립석 고정석</td>
+                    <td>6주</td>
+                    <td>220,000원</td>
+                </tr>
+                <tr data-type="reserved">
+                    <td>독립석 고정석</td>
+                    <td>8주</td>
+                    <td>290,000원</td>
+                </tr>
+                <tr data-type="locker">
+                    <td>사물함</td>
+                    <td>2주</td>
+                    <td>5,000원</td>
+                </tr>
+                <tr data-type="locker">
+                    <td>사물함</td>
+                    <td>4주</td>
+                    <td>7,000원</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 독립석 고정석 EVENT 섹션 -->
+    <section id="event" class="event-section">
+        <h2>독립석 고정석 EVENT</h2>
+        <p>특별 할인 이벤트 요금 안내</p>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>종류</th>
+                    <th>기간</th>
+                    <th>요금</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>독립석 고정석</td>
+                    <td>2주</td>
+                    <td>80,000원</td>
+                </tr>
+                <tr>
+                    <td>독립석 고정석</td>
+                    <td>4주</td>
+                    <td>140,000원</td>
+                </tr>
+                <tr>
+                    <td>독립석 고정석</td>
+                    <td>8주</td>
+                    <td>240,000원</td>
+                </tr>
+                <tr>
+                    <td>독립석 고정석</td>
+                    <td>12주</td>
+                    <td>350,000원</td>
+                </tr>
+                <tr>
+                    <td>독립석 고정석</td>
+                    <td>16주</td>
+                    <td>450,000원</td>
+                </tr>
+                <tr>
+                    <td>독립석 고정석</td>
+                    <td>20주</td>
+                    <td>550,000원</td>
+                </tr>
+                <tr>
+                    <td>독립석 고정석</td>
+                    <td>24주</td>
+                    <td>650,000원</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="event-note">12주 이상 고정석 이용한 고객은 <br class="mbr"> 4주 추가 등록할 경우 10만원</p>
+    </section>
+
+    <!-- 오시는 길 섹션 -->
+    <section id="location" class="location-section">
+        <h2>오시는 길</h2>
+        <div class="location-container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.16072185932!2d128.13416553488764!3d35.177546500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356efc6acfa046cd%3A0x18f7e94f5a57179d!2z7JSo7JWE7J207JSo65287J207ZSEKOyjvCk!5e0!3m2!1sko!2skr!4v1728572381885!5m2!1sko!2skr"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="location-info">
+                <p class="location-name">로열위 스터디 카페 앤 오피스 라운지</p>
+                <p class="location-address">경남 진주시 에나로 씨아이씨라이프 빌딩 3층, 4층</p>
+                <div class="location-details">
+                    <div class="location-item">
+                        <span>이용시간</span>
+                        <span>매일 00:00 - 24:00</span>
+                    </div>
+                    <div class="location-item">
+                        <span>전화번호</span>
+                        <span>1688-6723</span>
+                    </div>
+                    <div class="location-item">
+                        <span>이용안내</span>
+                        <span>무선 인터넷, 남녀 화장실 구분</span>
+                    </div>
+                </div>
+                <div class="location-buttons">
+                    <a href="https://place.map.kakao.com/m/8410058" target="_blank" class="btn kakao-map-btn">카카오맵</a>
+                    <a href="https://naver.me/5D8nQCu9" target="_blank" class="btn naver-map-btn">네이버지도</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="info">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2024 씨아이씨라이프 주식회사. 모든 권리 보유.</p>
+                <p>로열위 스터디 카페 앤 오피스 라운지</p>
+            </div>
+            <div class="business-info">
+                <h2>사업자 등록 정보</h2>
+                <p>씨아이씨라이프 주식회사</p>
+                <p>사업자 등록번호: 613-81-32419</p>
+                <p>대표자명: 박성기</p>
+                <p>주소: 경남 진주시 에나로 씨아이씨라이프 빌딩 3층, 4층</p>
+                <p>고객센터: 1688-6723</p>
+                <p>업태: 정보통신업, 부동산업, 예술, 스포츠 및 여가관련 서비스업</p>
+                <p>서비스 종목: 신문발행업, 비주거용 건물 임대업, 독서실 운영업, 교육관련자문평가업</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- 플로팅 버튼 -->
+<div class="floating-button">
+    <div class="floating-buttons">
+        <a href="tel:16886723" class="button" title="전화 연결">
+            <i class="fas fa-phone"></i><span>전화 연결</span>
+        </a>
+        <a href="#location" class="button" title="오시는 길">
+            <i class="fas fa-map-marker-alt"></i><span>오시는 길</span>
+        </a>
+        <a href="#pricing" class="button" title="이용 요금">
+            <i class="fas fa-dollar-sign"></i><span>이용 요금</span>
+        </a>
+        <a href="#event" class="button" title="시설 소개">
+            <i class="fas fa-info-circle"></i><span>시설 소개</span>
+        </a>
+        <a href="#" class="button" title="TOP">
+            <i class="fas fa-chevron-up"></i><span>TOP</span>
+        </a>
+    </div>
+</div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
